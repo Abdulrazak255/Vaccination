@@ -1,35 +1,48 @@
 package be.intecbrussel;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Animal implements Treatable,VaccinateAble {
+public abstract class Animal implements Treatable, VaccinateAble {
     private String name;
     private boolean isClean;
     private int age;
     private int animalNumber;
     private Map<Disease, Boolean> isVaccinated;
 
-    public Animal() {
-    }
+    public Animal()
+    {
 
+        Map<Disease , Boolean > hashMap = new HashMap<>();
+
+        for (Disease disease : Disease.values())
+        { hashMap.put(disease, false); }  // default is false
+        isVaccinated = hashMap;
+    }
     public Animal(String name, boolean isClean, int age, int animalNumber) {
         this.isClean = isClean;
         this.age = age;
         this.name = name;
         this.animalNumber = animalNumber;
+        Map<Disease , Boolean > hashMap = new HashMap<>();
+
+        for (Disease disease : Disease.values())
+        { hashMap.put(disease, false); }
+        isVaccinated = hashMap;
     }
 
-    public Map<Disease, Boolean> getIsVaccinated() {
-        return isVaccinated;
+    public Map<Disease, Boolean> getIsVaccinated()
+    {
+
+
+        return isVaccinated ;
     }
 
-    public void setIsVaccinated(Map<Disease, Boolean> isVaccinated) {
-        isVaccinated.put(Disease.CHICKENPOCKS, false);
-        isVaccinated.put(Disease.HEPATITISA, false);
-        isVaccinated.put(Disease.POLIO, false);
-        isVaccinated.put(Disease.FLUE, false);
+    public void setIsVaccinated(Map<Disease, Boolean> isVaccinated)
+    {
 
-        this.isVaccinated = isVaccinated;
+
+                this.isVaccinated = isVaccinated;
     }
 
 
@@ -66,12 +79,11 @@ public abstract class Animal implements Treatable,VaccinateAble {
     }
 
 
-    //public abstract void vaccinateAnimal();
 
 
     @Override
     public String toString() {
         return name + "   isClean :" + isClean + "   "
-                + age +" years  " + " number=" + animalNumber ;
+                + age +" years  " + " number=" + animalNumber  ;
     }
 }
