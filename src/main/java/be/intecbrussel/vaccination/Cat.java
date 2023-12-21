@@ -1,7 +1,4 @@
-package be.intecbrussel;
-
-import java.util.HashMap;
-import java.util.Map;
+package be.intecbrussel.vaccination;
 
 public class Cat extends Animal {
     private boolean hasLongNails ;

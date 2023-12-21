@@ -1,12 +1,7 @@
-package be.intecbrussel;
+package be.intecbrussel.vaccination;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class AnimalShelter
 {
@@ -66,8 +61,7 @@ public class AnimalShelter
             return filterAnimal.get(0);
         }
         else if (filterAnimal.size() > 1)
-        {
-            System.out.println("There are many animals those have this name ");
+        { System.out.println("There are many animals those have this name ");
             filterAnimal.forEach(animal -> System.out.println(animal.getName() + " " + animal.getAge() + " years " + " Number " + animal.getAnimalNumber()));
             System.out.println("So please enter its number 15 seconds or we give you the first of them ");
             List<Integer> integers = filterAnimal.stream().map(Animal::getAnimalNumber).collect(Collectors.toList());
@@ -81,7 +75,6 @@ public class AnimalShelter
                     int i = scanner.nextInt();
                     if (integers.contains(i))
                     { List<Animal> filterAnimal2 = filterAnimal.stream().filter(animal -> animal.getAnimalNumber() == i).collect(Collectors.toList());
-
                         return filterAnimal2.get(0);
                     }
 
@@ -91,10 +84,7 @@ public class AnimalShelter
                     System.out.println("Your input is not suitable , please enter again :");
                     scanner.nextInt();
                 }
-
-
-
-        }
+            }
         } return filterAnimal.get(0);
     }
     public void treatAnimal (int animalNumber)                     //methode 8

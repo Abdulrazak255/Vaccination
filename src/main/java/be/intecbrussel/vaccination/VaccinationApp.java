@@ -1,7 +1,6 @@
-package be.intecbrussel;
+package be.intecbrussel.vaccination;
 
 import java.util.*;
-import java.util.Timer;
 import java.util.stream.Collectors;
 
 public class VaccinationApp {

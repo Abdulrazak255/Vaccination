@@ -1,6 +1,4 @@
-package be.intecbrussel;
-
-import java.util.Map;
+package be.intecbrussel.vaccination;
 
 public class Monkey extends Animal{
     private boolean isHyperActive ;

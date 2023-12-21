@@ -1,4 +1,4 @@
-package be.intecbrussel;
+package be.intecbrussel.vaccination;
 
 import java.util.HashMap;
 import java.util.Map;
